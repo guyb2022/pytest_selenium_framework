@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 
 # Config file
-Configuration/
+Configurations/
 
 # Logs files
 Logs/
@@ -170,3 +170,6 @@ Screenshots/
 
 # Reports
 Reports/
+
+# vscode
+.vscode
