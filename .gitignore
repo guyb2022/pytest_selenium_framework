@@ -173,3 +173,6 @@ Reports/
 
 # vscode
 .vscode
+
+# data
+TestData/

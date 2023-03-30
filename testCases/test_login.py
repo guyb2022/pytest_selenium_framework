@@ -35,8 +35,6 @@ class Test_001_Login:
         self.driver.get(self.baseURL)
         self.lp = LoginPage(self.driver)
         time.sleep(3)
-        self.lp.sighin()
-        time.sleep(3)
         self.lp.setUserName(self.username)
         self.lp.setPassword(self.password)
         self.lp.clickLogin()
@@ -52,6 +50,8 @@ class Test_001_Login:
             self.driver.close()
             self.logger.error("***************** Loging test Failed *****************")
             assert False
+
+
 
 
 
