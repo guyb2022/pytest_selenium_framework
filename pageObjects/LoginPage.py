@@ -1,13 +1,10 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 class LoginPage:
-    textbox_username_xpath = "//input[@data-automation-id='email']"
+    textbox_username_xpath = "//input[@type='text']"
     textbox_password_xpath = "//input[@type='password']"
-    button_searc_job = '//button[@data-automation-id="navigationItem-Search for Jobs"]'
     button_sign_xpath = '//button[@data-automation-id="signInSubmitButton"]'
     button_signout_pre_xpath = '//button[@id="accountSettingsButton"]'
     button_signout_post_xpath = '//button[@id="item1"]'
@@ -24,6 +21,8 @@ class LoginPage:
         self.driver.find_element(By.XPATH, self.textbox_password_xpath).send_keys(password)
 
     def clickLogin(self):
+        # listitem = self.driver.find_element(By.XPATH, self.button_sign_xpath)
+        # self.driver.execute_script("argumant[0].click();", listitem)
         clickable = self.driver.find_element(By.XPATH, self.button_sign_xpath)
         ActionChains(self.driver)\
             .move_to_element(clickable)\

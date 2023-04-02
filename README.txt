@@ -12,6 +12,8 @@ testCases
   - conftest.py
   - test_login.py
 TestData
+  - loginData.xlsx
+    username | password | exp
 utilities
   - __init__.py
   - customLogger.py

@@ -26,7 +26,6 @@ class Test_002_DDT_Login:
             self.password = XLUtils.readData(self.path, 'Sheet1', r, 2)
             self.exp = XLUtils.readData(self.path, 'Sheet1', r, 3)
             time.sleep(3)
-            # self.driver.save_screenshot("before login phase")
             self.lp.setUserName(self.user)
             self.lp.setPassword(self.password)
             self.lp.clickLogin()

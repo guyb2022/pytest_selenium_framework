@@ -18,7 +18,7 @@ class Test_001_Login:
         time.sleep(5)
         act_title = self.driver.title
 
-        if act_title == 'Careers':
+        if act_title == 'Workday':
             assert True
             self.driver.close()
             self.logger.info("***************** Home Page Title PASSED *****************")
@@ -34,15 +34,17 @@ class Test_001_Login:
         self.driver = setup
         self.driver.get(self.baseURL)
         self.lp = LoginPage(self.driver)
-        time.sleep(3)
+        time.sleep(7)
         self.lp.setUserName(self.username)
         self.lp.setPassword(self.password)
         self.lp.clickLogin()
+        self.logger.info("************ login Success **********************")
         time.sleep(5)
         act_title = self.driver.title
 
-        if act_title == 'Careers':
+        if act_title == 'Candidate Home':
             assert True
+            self.lp.clickLogout()
             self.driver.close()
             self.logger.info("***************** Loging test PASSED *****************")
         else:
