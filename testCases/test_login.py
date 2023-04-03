@@ -2,6 +2,7 @@ from pageObjects.LoginPage import LoginPage
 import time
 from utilities.readProperties import ReadConfig
 from utilities.customLogger import LogGen
+import pytest
 
 
 class Test_001_Login:
@@ -10,6 +11,7 @@ class Test_001_Login:
     password = ReadConfig.getPassword()
     logger = LogGen.loggen()
 
+    @pytest.mark.regression
     def test_homePageTitle(self, setup):
         self.logger.info("***************** Test_001_Login *****************")
         self.logger.info("***************** Verifying Home Page Title *****************")
@@ -28,6 +30,8 @@ class Test_001_Login:
             self.logger.error("***************** Home Page Title FAILED *****************")
             assert False
 
+    @pytest.mark.sanity
+    @pytest.mark.regression
     def test_login(self, setup):
 
         self.logger.info("***************** Verifying Login test*****************")

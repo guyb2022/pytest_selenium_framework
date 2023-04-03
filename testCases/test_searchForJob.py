@@ -11,7 +11,8 @@ class Test_003_searchForJob:
     password = ReadConfig.getPassword()
     logger = LogGen.loggen()
 
-    @pytest.mark.skip(reason='Already tested, need to skipp for next test')
+    # @pytest.mark.skip(reason='Already tested, need to skipp for next test')
+    @pytest.mark.sanity
     def test_searchForJobPage(self, setup):
         self.logger.info("*************** Test_003_searchForJob *******************")
         self.logger.info("***************** Verifying job searching Page*****************")
@@ -28,7 +29,7 @@ class Test_003_searchForJob:
         time.sleep(7)
         # Now we need to go to the search for a job page
         self.sfj = SearchForJob(self.driver)
-        self.sfj.goto_searchForJobPage()
+        self.sfj.gotoSearchForJobPage()
         time.sleep(7)
         act_title = self.driver.title
 
@@ -41,7 +42,9 @@ class Test_003_searchForJob:
             self.logger.error("***************** Search For Job page FAILED *****************")
             assert False
 
-    @pytest.mark.skip(reason='Already tested, need to skipp for next test')
+    # @pytest.mark.skip(reason='Already tested, need to skipp for next test')
+    @pytest.mark.sanity
+    @pytest.mark.regression
     def test_SearchJobRequest(self, setup):
         self.logger.info("***************** Verifying Search Job Request *****************")
         self.driver = setup
@@ -75,6 +78,8 @@ class Test_003_searchForJob:
             self.driver.close()
             assert True
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_clickOnJobsLink(self, setup):
         self.logger.info("***************** Verifying Click on Jobs Link *****************")
         self.driver = setup

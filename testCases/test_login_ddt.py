@@ -3,12 +3,15 @@ import time
 from utilities.readProperties import ReadConfig
 from utilities.customLogger import LogGen
 from utilities import XLUtils
+import pytest
+
 
 class Test_002_DDT_Login:
     baseURL = ReadConfig.getApplicationURL()
     path = ".//TestData/LoginData.xlsx"
     logger = LogGen.loggen()
 
+    @pytest.mark.regression
     def test_login_ddt(self, setup):
         self.logger.info("***************** Test_002_DDT_Login *****************")
         self.logger.info("***************** Verifying Login DDT test *****************")
